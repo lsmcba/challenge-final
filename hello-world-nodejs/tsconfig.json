@@ -17,9 +17,9 @@
     "esModuleInterop": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2015",
+    "target": "es2021",
     "types": ["node"],
-    "lib": ["es2020", "esnext.asynciterable"],
+    "lib": ["es2021", "esnext.asynciterable"],
     "baseUrl": "src"
   },
   "exclude": [

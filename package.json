@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "react-scripts": "^5.0.1"
+  }
+}
