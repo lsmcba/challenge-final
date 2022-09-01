@@ -1,15 +1,10 @@
-FROM node:16
+FROM node:14-alpine
 
-WORKDIR /app 
-
-RUN mkdir -p /app/server
+WORKDIR /app
 
 COPY . /app
-COPY server/server.ts /app/server 
 
-RUN npm install @types/node --save-dev
-RUN npm i @types/express
-RUN npm install -g ts-node
+RUN npm install 
 
 EXPOSE 3000
 
