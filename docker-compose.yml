@@ -25,15 +25,15 @@ services:
 
   nginx_service: 
     container_name: nginx
-    image: nginx_service
+    image: nginx
     build: 
       context: ./hello-world-nginx
       dockerfile: Dockerfile
     ports:
-      - "80:18181"
+      - "80:80"
     depends_on:
-      - hello-node
-      - hello-golang
+      - nodejs_service
+      - golang_service
     networks:
       - final
 
