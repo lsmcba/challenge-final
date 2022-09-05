@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  nodejs_service: 
+    container_name: nodejs
+    image: nodejs
+    build: 
+      context: ./hello-world-nodejs
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - final
+
+  golang_service:
+    container_name: golang
+    image: golang
+    build: 
+      context: ./hello-world-golang
+      dockerfile: Dockerfile 
+    ports: 
+      - "3002:3002"
+    networks:
+      - final
+
+  nginx_service: 
+    container_name: nginx
+    image: nginx_service
+    build: 
+      context: ./hello-world-nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:18181"
+    depends_on:
+      - hello-node
+      - hello-golang
+    networks:
+      - final
+
+networks:
+  final:
+    driver: bridge
