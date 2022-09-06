@@ -30,7 +30,7 @@ services:
       context: ./hello-world-nginx
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "80:18181"
     depends_on:
       - nodejs_service
       - golang_service
