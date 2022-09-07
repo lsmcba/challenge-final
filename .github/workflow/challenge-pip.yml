@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 env:
-  REGISTRY: lsmcba
+  REGISTRY: Leonardo Moya
   IMAGE_NAME: challenge_final_lsm
 
 jobs:
