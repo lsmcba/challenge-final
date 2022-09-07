@@ -12,24 +12,10 @@ env:
   IMAGE_NAME_GOLANG: challenge_final_go
  
 jobs:
-  init:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm install
-    
   build-docker-nodejs:
     runs-on: ubuntu-latest
-    needs: init
     steps:
+    - name: Checkout_actions
     - uses: actions/checkout@v3
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
@@ -62,8 +48,8 @@ jobs:
 
   build-docker-golang:
     runs-on: ubuntu-latest
-    needs: init
     steps:
+    - name: Checkout_actions
     - uses: actions/checkout@v3
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
