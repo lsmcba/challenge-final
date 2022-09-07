@@ -4,4 +4,4 @@ RUN apk add --no-cache jq curl
 
 COPY docker-deps/default.conf /etc/nginx/conf.d/default.conf
 
-expose 18181
+EXPOSE 18181
