@@ -7,4 +7,4 @@ RUN npm i -D typescript ts-node @types/node @types/express
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
