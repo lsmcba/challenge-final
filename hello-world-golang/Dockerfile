@@ -9,4 +9,4 @@ RUN go build -o /helloworld
 
 EXPOSE 3002
 
-CMD [ "/helloworld" ]
+CMD ["go", "run", "app.go"]
