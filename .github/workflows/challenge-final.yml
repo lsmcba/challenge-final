@@ -95,6 +95,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "challengefinal-dockernode-lsm" 
           heroku_email: "lsmcba@gmail.com"
+          appdir: "./hello-world-nodejs"
           usedocker: true  
 
   build-docker-golang:
@@ -128,6 +129,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "challengefinal-dockergo-lsm" 
           heroku_email: "lsmcba@gmail.com"
+          appdir: "./hello-world-golang"
           usedocker: true  
 
   build-docker-nginx:
@@ -161,4 +163,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "challengefinal-dockernginx-lsm" #Must be unique in Heroku
           heroku_email: "lsmcba@gmail.com"
+          appdir: "./hello-world-nginx"
           usedocker: true  
