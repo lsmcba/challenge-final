@@ -43,6 +43,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "challengefinal-dockernode-lsm" 
           heroku_email: "lsmcba@gmail.com"
+          healthcheck: "https://challengefinal-dockernode-lsm.herokuapp.com/health"
           appdir: "./hello-world-nodejs"
           usedocker: true  
 
@@ -77,5 +78,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "challengefinal-dockergo-lsm" 
           heroku_email: "lsmcba@gmail.com"
+          healthcheck: "https://challengefinal-dockergo-lsm.herokuapp.com/health"
           appdir: "./hello-world-golang"
           usedocker: true
