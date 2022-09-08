@@ -2,10 +2,7 @@ FROM golang:1.16-alpine
 
 WORKDIR /app
 
-ADD . .
-
-RUN go mod init helloworld
-RUN go build -o /helloworld
+COPY . .
 
 EXPOSE 3002
 

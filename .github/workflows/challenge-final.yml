@@ -10,13 +10,14 @@ env:
   REGISTRY: lsmcba
   IMAGE_NAME_NODEJS: challenge_final_node
   IMAGE_NAME_GOLANG: challenge_final_go
- 
+  HEROKU_NAME_NODEJS: challengefinal-dockernode-lsm
+  HEROKU_NAME_GOLANG: challengefinal-dockergo-lsm
+   
 jobs:
   build-docker-nodejs:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout_actions
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: Set up Docker Buildx
@@ -41,9 +42,9 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "challengefinal-dockernode-lsm" 
+          heroku_app_name: ${{env.HEROKU_NAME_NODEJS}}
           heroku_email: "lsmcba@gmail.com"
-          healthcheck: "https://challengefinal-dockernode-lsm.herokuapp.com/health"
+          healthcheck: "https://${{env.HEROKU_NAME_NODEJS}}.herokuapp.com/hello"
           appdir: "./hello-world-nodejs"
           usedocker: true
           rollbackonhealthcheckfailed: true  
@@ -51,8 +52,7 @@ jobs:
   build-docker-golang:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout_actions
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: Set up Docker Buildx
@@ -77,9 +77,9 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "challengefinal-dockergo-lsm" 
+          heroku_app_name: ${{env.HEROKU_NAME_GOLANG}}
           heroku_email: "lsmcba@gmail.com"
-          healthcheck: "https://challengefinal-dockergo-lsm.herokuapp.com/health"
+          healthcheck: "https://${{env.HEROKU_NAME_GOLANG}}.herokuapp.com/hello"
           appdir: "./hello-world-golang"
           usedocker: true
           rollbackonhealthcheckfailed: true
