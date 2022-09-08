@@ -45,7 +45,8 @@ jobs:
           heroku_email: "lsmcba@gmail.com"
           healthcheck: "https://challengefinal-dockernode-lsm.herokuapp.com/health"
           appdir: "./hello-world-nodejs"
-          usedocker: true  
+          usedocker: true
+          rollbackonhealthcheckfailed: true  
 
   build-docker-golang:
     runs-on: ubuntu-latest
@@ -81,3 +82,4 @@ jobs:
           healthcheck: "https://challengefinal-dockergo-lsm.herokuapp.com/health"
           appdir: "./hello-world-golang"
           usedocker: true
+          rollbackonhealthcheckfailed: true
