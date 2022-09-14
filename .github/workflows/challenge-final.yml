@@ -44,11 +44,9 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{env.HEROKU_NAME_NODEJS}}
           heroku_email: "lsmcba@gmail.com"
-          healthcheck: "https://${{env.HEROKU_NAME_NODEJS}}.herokuapp.com/hello"
           appdir: "./hello-world-nodejs"
           usedocker: true
-          rollbackonhealthcheckfailed: true  
-
+          
   build-docker-golang:
     runs-on: ubuntu-latest
     steps:
@@ -79,7 +77,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{env.HEROKU_NAME_GOLANG}}
           heroku_email: "lsmcba@gmail.com"
-          healthcheck: "https://${{env.HEROKU_NAME_GOLANG}}.herokuapp.com/hello"
           appdir: "./hello-world-golang"
           usedocker: true
-          rollbackonhealthcheckfailed: true
