@@ -148,6 +148,13 @@ networks:
   final:
     driver: bridge
 ```
+`Servicios`
+
+![servicios](https://github.com/lsmcba/challenge-final/blob/main/assets/Servicios.png)
+
+`Pruebas con CURL`
+
+![prueba](https://github.com/lsmcba/challenge-final/blob/main/assets/Curl.png)
 
 ## `WORKFLOW` para GitHub Actions
 
@@ -234,6 +241,17 @@ jobs:
           appdir: "./hello-world-golang"
           usedocker: true
 ```
+`GitHub`
+
+![github](https://github.com/lsmcba/challenge-final/blob/main/assets/GitHubActions.png)
+
+`DockerHub`
+
+![dockerhub](https://github.com/lsmcba/challenge-final/blob/main/assets/DockerHub.png)
+
+`Heroku`
+
+![heroku](https://github.com/lsmcba/challenge-final/blob/main/assets/Heroku.png)
           
 
 ## Time
